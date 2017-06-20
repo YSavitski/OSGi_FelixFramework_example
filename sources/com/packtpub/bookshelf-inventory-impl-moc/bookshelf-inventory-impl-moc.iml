@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="osgiBundleFacetType" name="OSGi Bundle">
+      <configuration>
+        <properties />
+      </configuration>
+    </facet>
+    <facet type="Osmorc" name="OSGi">
+      <configuration manifestGenerationMode="OsmorcControlled" manifestLocation="" jarfileLocation="com.packtpub.felix.bookshelf-inventory-impl-moc-1.5.0.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="com.packtpub.felix.bookshelf.inventory.impl.mock.activator.BookInventoryMonkImplActivator" bundleSymbolicName="com.packtpub.felix.bookshelf-inventory-impl-moc" bundleVersion="1.5.0" ignoreFilePattern="" useProjectDefaultManifestFileLocation="true" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
+        <additionalProperties>
+          <property key="Bundle-Description" value="Memory-based mock implementation of the Bookshelf Inventory API" />
+          <property key="Bundle-Category" value="sample" />
+          <property key="Export-Package" value="com.packtpub.felix.bookshelf.inventory.impl.mock" />
+          <property key="Private-Package" value="com.packtpub.felix.bookshelf.inventory.impl.mock.activator" />
+          <property key="Bundle-Name" value="Bookshelf Inventory Impl - Mock" />
+        </additionalProperties>
+        <additionalJARContents />
+      </configuration>
+    </facet>
+    <facet type="osgiBundleFacet" name="OSGi Bundle">
+      <configuration />
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: com.packtpub.felix:com.packtpub.felix.bookshelf-inventory-api:1.5.0" level="project" />
+    <orderEntry type="library" name="Maven: org.osgi:org.osgi.core:6.0.0" level="project" />
+  </component>
+</module>

@@ -1,0 +1,26 @@
+package com.packtpub.felix.bookshelf.inventory.impl.mock.activator;
+
+import com.packtpub.felix.bookshelf.inventory.api.model.BookInventory;
+import com.packtpub.felix.bookshelf.inventory.impl.mock.BookInventoryMockImpl;
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceRegistration;
+
+public class BookInventoryMonkImplActivator implements BundleActivator {
+    private ServiceRegistration reg = null;
+
+    @Override
+    public void start(BundleContext bundleContext) throws Exception {
+        System.out.println("\nStarting Book Inventory Mock Impl");
+        this.reg = bundleContext.registerService(BookInventory.class.getName(), new BookInventoryMockImpl(), null);
+    }
+
+    @Override
+    public void stop(BundleContext bundleContext) throws Exception {
+        System.out.println("\nStoping Book Inventory Mock Impl");
+        if(this.reg != null){
+            bundleContext.ungetService(reg.getReference());
+            this.reg = null;
+        }
+    }
+}
