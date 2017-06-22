@@ -1,6 +1,8 @@
 package com.packtpub.felix.bookshelf.service.tui;
 
+import com.packtpub.felix.bookshelf.inventory.api.exceptions.BookAlreadyExistsException;
 import com.packtpub.felix.bookshelf.inventory.api.exceptions.BookNotFoundException;
+import com.packtpub.felix.bookshelf.inventory.api.exceptions.InvalidBookException;
 import com.packtpub.felix.bookshelf.inventory.api.model.Book;
 import com.packtpub.felix.bookshelf.service.api.BookShelfService;
 import com.packtpub.felix.bookshelf.service.exceptions.InvalidCredentialException;
@@ -13,7 +15,7 @@ import java.util.Set;
 
 public class BookshelfServiceProxy {
     public static final String SCOPE = "book";
-    public static final String[] FUNCTIONS = new String[] {"search"};
+    public static final String[] FUNCTIONS = new String[] {"add", "search"};
     private enum SearchFilters {
         TITLE,
         AUTHOR,
@@ -74,6 +76,23 @@ public class BookshelfServiceProxy {
         Set<String> isbnSet = service.searchBooksByRating(sessionID, lower, upper);
 
         return getBooks(sessionID, service, isbnSet);
+    }
+
+    public String add(@Descriptor("username") String username,
+                      @Descriptor("password") String password,
+                      @Descriptor("ISBN") String isbn,
+                      @Descriptor("Title") String title,
+                      @Descriptor("Author") String author,
+                      @Descriptor("Category") String category,
+                      @Descriptor("Rating (0..10)") int rating)
+            throws InvalidCredentialException,
+            BookAlreadyExistsException, InvalidBookException
+    {
+        BookShelfService service = lookupService();
+        String sessionId = service.login(
+                username, password.toCharArray());
+        service.addBook(sessionId, isbn, title, author, category, rating);
+        return isbn;
     }
 
     protected BookShelfService lookupService(){
