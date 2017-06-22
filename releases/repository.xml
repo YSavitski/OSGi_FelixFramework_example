@@ -1,4 +1,4 @@
-<repository lastmodified='20170620070707.578'>
+<repository lastmodified='20170622033443.645'>
   <resource id='com.packtpub.felix.bookshelf-inventory-api/1.5.0' symbolicname='com.packtpub.felix.bookshelf-inventory-api' presentationname='Bookshelf Inventory API' uri='file:/D:/Java_test_projects/felixbook/releases/com/packtpub/felix/com.packtpub.felix.bookshelf-inventory-api/1.5.0/com.packtpub.felix.bookshelf-inventory-api-1.5.0.jar' version='1.5.0'>
     <description>Defines the API for the Bookshelf inventory</description>
     <size>8054</size>
@@ -38,6 +38,30 @@
     <require name='package' filter='(&amp;(package=com.packtpub.felix.bookshelf.inventory.api.exceptions)(version&gt;=1.5.0)(!(version&gt;=2.0.0)))' extend='false' multiple='false' optional='false'>Import package com.packtpub.felix.bookshelf.inventory.api.exceptions;version="[1.5,2)"</require>
     <require name='package' filter='(&amp;(package=com.packtpub.felix.bookshelf.inventory.api.model)(version&gt;=1.5.0)(!(version&gt;=2.0.0)))' extend='false' multiple='false' optional='false'>Import package com.packtpub.felix.bookshelf.inventory.api.model;version="[1.5,2)"</require>
     <require name='package' filter='(&amp;(package=com.packtpub.felix.bookshelf.inventory.impl.mock))' extend='false' multiple='false' optional='false'>Import package com.packtpub.felix.bookshelf.inventory.impl.mock</require>
+    <require name='package' filter='(&amp;(package=org.osgi.framework)(version&gt;=1.8.0)(!(version&gt;=2.0.0)))' extend='false' multiple='false' optional='false'>Import package org.osgi.framework;version="[1.8,2)"</require>
+  </resource>
+  <resource id='com.packtpub.felix.bookshelf-service/1.7.0' symbolicname='com.packtpub.felix.bookshelf-service' presentationname='Bookshelf Service' uri='file:/D:/Java_test_projects/felixbook/releases/com/packtpub/felix/com.packtpub.felix.bookshelf-service/1.7.0/com.packtpub.felix.bookshelf-service-1.7.0.jar' version='1.7.0'>
+    <size>12371</size>
+    <category id='sample'/>
+    <capability name='bundle'>
+      <p n='symbolicname' v='com.packtpub.felix.bookshelf-service'/>
+      <p n='presentationname' v='Bookshelf Service'/>
+      <p n='version' t='version' v='1.7.0'/>
+      <p n='manifestversion' v='2'/>
+    </capability>
+    <capability name='package'>
+      <p n='package' v='com.packtpub.felix.bookshelf.service.api'/>
+      <p n='version' t='version' v='1.7.0'/>
+      <p n='uses:' v='com.packtpub.felix.bookshelf.inventory.api.exceptions,com.packtpub.felix.bookshelf.inventory.api.model,com.packtpub.felix.bookshelf.service.exceptions'/>
+    </capability>
+    <capability name='package'>
+      <p n='package' v='com.packtpub.felix.bookshelf.service.exceptions'/>
+      <p n='version' t='version' v='1.7.0'/>
+    </capability>
+    <require name='package' filter='(&amp;(package=com.packtpub.felix.bookshelf.inventory.api.exceptions)(version&gt;=1.5.0)(!(version&gt;=2.0.0)))' extend='false' multiple='false' optional='false'>Import package com.packtpub.felix.bookshelf.inventory.api.exceptions;version="[1.5,2)"</require>
+    <require name='package' filter='(&amp;(package=com.packtpub.felix.bookshelf.inventory.api.model)(version&gt;=1.5.0)(!(version&gt;=2.0.0)))' extend='false' multiple='false' optional='false'>Import package com.packtpub.felix.bookshelf.inventory.api.model;version="[1.5,2)"</require>
+    <require name='package' filter='(&amp;(package=com.packtpub.felix.bookshelf.service.api))' extend='false' multiple='false' optional='false'>Import package com.packtpub.felix.bookshelf.service.api</require>
+    <require name='package' filter='(&amp;(package=com.packtpub.felix.bookshelf.service.exceptions))' extend='false' multiple='false' optional='false'>Import package com.packtpub.felix.bookshelf.service.exceptions</require>
     <require name='package' filter='(&amp;(package=org.osgi.framework)(version&gt;=1.8.0)(!(version&gt;=2.0.0)))' extend='false' multiple='false' optional='false'>Import package org.osgi.framework;version="[1.8,2)"</require>
   </resource>
 </repository>
