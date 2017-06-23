@@ -2,3 +2,5 @@
 *.jar.*
 *.pom.*
 /Code_examples/
+/source_code/
+/felix_framework_jars/

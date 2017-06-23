@@ -10,7 +10,9 @@ import java.util.List;
 import java.util.Set;
 
 public interface BookShelfService extends Authentication {
-    Set<String> getGroups(String sessionId);
+    Set<String> getCategories(String sessionId);
+
+    int getBooksCount(String session);
 
     void addBook(String session, String isbn, String title, String author, String category, int rating)
             throws BookAlreadyExistsException, InvalidBookException;

@@ -11,7 +11,6 @@ import java.util.*;
 
 public class BookInventoryMockImpl implements BookInventory {
     public static final String DEFAULT_CATEGORY = "default";
-
     private Map<String, MutableBook> booksByISBN = new HashMap<>();
     private Map<String, Integer> categories = new HashMap<>();
 
@@ -19,6 +18,8 @@ public class BookInventoryMockImpl implements BookInventory {
     public Set<String> getCategories() {
         return this.categories.keySet();
     }
+
+
 
     @Override
     public MutableBook createBook(String isbn) throws BookAlreadyExistsException {
@@ -104,7 +105,7 @@ public class BookInventoryMockImpl implements BookInventory {
                             continue;
                         }
                         break;
-                    case GATEGORY_LIKE:
+                    case CATEGORY_LIKE:
                         if(!checkStringMatch(book.getCategory(), criterion.getValue())){
                             iterator.remove();
                             continue;
@@ -133,6 +134,11 @@ public class BookInventoryMockImpl implements BookInventory {
         Set<String> isbn = new HashSet<>();
         books.stream().forEach(book -> isbn.add(book.getIsbn()));
         return isbn;
+    }
+
+    @Override
+    public int getBooksCount() {
+        return booksByISBN.size();
     }
 
     private boolean checkStringMatch(String attr, String critVal){

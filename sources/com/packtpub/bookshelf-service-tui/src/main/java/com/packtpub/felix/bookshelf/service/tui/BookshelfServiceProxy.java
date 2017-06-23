@@ -10,34 +10,17 @@ import java.util.Set;
 
 public interface BookshelfServiceProxy {
     String SCOPE = "book";
-    String FUNCTION_SEARCH = "search";
-    String[] FUNCTIONS = new String[] {"add", "search"};
+    String FUNCTIONS_STR = "{add, search, getBooksCount}";
 
 
-    @Descriptor("Search books by author, title, or category")
-    Set<Book> search(
-            @Descriptor("username") String username,
-            @Descriptor("password") String password,
-            @Descriptor("search on attribute: author, title, or category") String attribute,
-            @Descriptor("match like (use % at the beginning or end of <like> for wild-card)") String filter)
-            throws InvalidCredentialException;
+    Set<Book> search(String username, String password, String attribute, String filter) throws InvalidCredentialException;
 
-    Set<Book> search(
-            @Descriptor("username") String username,
-            @Descriptor("password") String password,
-            @Descriptor("search on attribute: rating") String attribute,
-            @Descriptor("lower rating limit (inclusive)") int lower,
-            @Descriptor("upper rating limit (inclusive)") int upper)
-            throws InvalidCredentialException;
+    Set<Book> search(String username, String password, String attribute, int lower, int upper) throws InvalidCredentialException;
 
-    @Descriptor("Add new book")
-    String add(@Descriptor("username") String username,
-                      @Descriptor("password") String password,
-                      @Descriptor("ISBN") String isbn,
-                      @Descriptor("Title") String title,
-                      @Descriptor("Author") String author,
-                      @Descriptor("Category") String category,
-                      @Descriptor("Rating (0..10)") int rating)
+
+    String add(String username, String password, String isbn, String title, String author, String category, int rating)
             throws InvalidCredentialException,
             BookAlreadyExistsException, InvalidBookException;
+
+    int getBooksCount(String username, String password) throws InvalidCredentialException;
 }

@@ -6,7 +6,7 @@
 
     <groupId>com.packtpub.felix</groupId>
     <artifactId>com.packtpub.felix.bookshelf-service-tui</artifactId>
-    <version>1.9.3</version>
+    <version>1.9.6</version>
     <packaging>bundle</packaging>
     <name>Bookshelf-Service-TUI</name>
 
@@ -29,13 +29,13 @@
         <dependency>
             <groupId>com.packtpub.felix</groupId>
             <artifactId>com.packtpub.felix.bookshelf-service</artifactId>
-            <version>1.7.0</version>
+            <version>1.7.3</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.packtpub.felix</groupId>
             <artifactId>com.packtpub.felix.bookshelf-inventory-api</artifactId>
-            <version>1.5.0</version>
+            <version>1.5.1</version>
         </dependency>
     </dependencies>
 

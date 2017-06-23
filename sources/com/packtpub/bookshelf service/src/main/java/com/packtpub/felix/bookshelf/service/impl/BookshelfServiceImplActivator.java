@@ -12,6 +12,7 @@ import org.osgi.framework.ServiceRegistration;
 
 import java.util.Set;
 
+@Deprecated
 public class BookshelfServiceImplActivator implements BundleActivator {
 
     private ServiceRegistration registration = null;

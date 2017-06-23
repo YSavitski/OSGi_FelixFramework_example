@@ -6,7 +6,7 @@
 
     <groupId>com.packtpub.felix</groupId>
     <artifactId>com.packtpub.felix.bookshelf-service</artifactId>
-    <version>1.7.1</version>
+    <version>1.7.3</version>
 
     <packaging>bundle</packaging>
     <name>Bookshelf Service</name>
@@ -15,7 +15,7 @@
         <dependency>
             <groupId>com.packtpub.felix</groupId>
             <artifactId>com.packtpub.felix.bookshelf-inventory-api</artifactId>
-            <version>1.5.0</version>
+            <version>1.5.1</version>
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>

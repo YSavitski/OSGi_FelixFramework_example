@@ -6,7 +6,7 @@
 
     <groupId>com.packtpub.felix</groupId>
     <artifactId>com.packtpub.felix.bookshelf-inventory-api</artifactId>
-    <version>1.5.0</version>
+    <version>1.5.1</version>
     <packaging>bundle</packaging>
     <name>Bookshelf Inventory API</name>
     <description>Defines the API for the Bookshelf inventory</description>

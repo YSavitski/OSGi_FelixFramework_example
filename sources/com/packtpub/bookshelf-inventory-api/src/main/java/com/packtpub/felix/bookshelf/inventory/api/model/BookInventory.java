@@ -10,7 +10,7 @@ import java.util.Set;
 
 public interface BookInventory {
     enum SearchCriteria{
-        ISBN_LIKE, TITLE_LIKE, AUHTOR_LIKE, GATEGORY_LIKE, GRADE_GT, GRADE_LT
+        ISBN_LIKE, TITLE_LIKE, AUHTOR_LIKE, CATEGORY_LIKE, GRADE_GT, GRADE_LT
     }
 
     Set<String> getCategories();
@@ -20,4 +20,5 @@ public interface BookInventory {
     Book loadBook(String isbn) throws BookNotFoundException;
     void removeBook(String isbn) throws BookNotFoundException;
     Set<String> searchBooks(Map<SearchCriteria, String> criteria);
+    int getBooksCount();
 }
