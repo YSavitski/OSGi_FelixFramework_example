@@ -17,16 +17,16 @@ public class BookshelfServiceImplActivator implements BundleActivator {
     private ServiceRegistration registration = null;
 
     public void start(BundleContext bundleContext) throws Exception {
-        this.registration = bundleContext.registerService(BookShelfService.class.getName(),
+        /*this.registration = bundleContext.registerService(BookShelfService.class.getName(),
                 new BookShelfServiceImpl(bundleContext), null);
 
-        testService(bundleContext);
+        testService(bundleContext);*/
     }
 
     public void stop(BundleContext bundleContext) throws Exception {
-        if(this.registration != null){
+        /*if(this.registration != null){
             bundleContext.ungetService(registration.getReference());
-        }
+        }*/
     }
 
     private void testService(BundleContext bundleContext) {

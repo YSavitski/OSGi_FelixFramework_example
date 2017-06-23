@@ -9,14 +9,14 @@ import java.util.Hashtable;
 public class BookshelfTuiActivator implements BundleActivator {
     @Override
     public void start(BundleContext bundleContext) throws Exception {
-        Hashtable props = new Hashtable();
+        /*Hashtable props = new Hashtable();
         props.put("osgi.command.scope", BookshelfServiceProxy.SCOPE);
         props.put("osgi.command.function", BookshelfServiceProxy.FUNCTIONS);
 
         bundleContext.registerService(
                 BookshelfServiceProxy.class.getName(),
                 new BookshelfServiceProxy(bundleContext),
-                props);
+                props);*/
     }
 
     @Override

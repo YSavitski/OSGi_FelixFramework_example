@@ -35,9 +35,9 @@
                     <instructions>
                         <Bundle-Category>sample</Bundle-Category>
                         <Bundle-SymbolicName>${artifactId}</Bundle-SymbolicName>
-                        <Bundle-Activator>com.packtpub.felix.bookshelf.service.impl.BookshelfServiceImplActivator</Bundle-Activator>
+                        <!--<Bundle-Activator>com.packtpub.felix.bookshelf.service.impl.BookshelfServiceImplActivator</Bundle-Activator>-->
                         <Export-Package>com.packtpub.felix.bookshelf.service.api, com.packtpub.felix.bookshelf.service.exceptions</Export-Package>
-                        <Private-Package>com.packtpub.felix.bookshelf.service.impl</Private-Package>
+                        <!--<Private-Package>com.packtpub.felix.bookshelf.service.impl</Private-Package>-->
                     </instructions>
                     <remoteOBR>repo-rel</remoteOBR>
                     <prefixUrl>file:///D:/Java_test_projects/felixbook/releases</prefixUrl>
@@ -52,6 +52,21 @@
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-ipojo-plugin</artifactId>
+                <version>1.12.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>ipojo-bundle</goal>
+                        </goals>
+                        <configuration>
+                            <metadata>src/main/resources/meta.xml</metadata>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

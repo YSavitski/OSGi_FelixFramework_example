@@ -1,3 +1,4 @@
 *.xml.*
 *.jar.*
 *.pom.*
+/Code_examples/

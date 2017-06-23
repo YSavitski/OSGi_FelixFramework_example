@@ -7,12 +7,11 @@
       </configuration>
     </facet>
     <facet type="Osmorc" name="OSGi">
-      <configuration manifestGenerationMode="OsmorcControlled" manifestLocation="" jarfileLocation="com.packtpub.felix.bookshelf-inventory-impl-moc-1.5.0.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="com.packtpub.felix.bookshelf.inventory.impl.mock.activator.BookInventoryMonkImplActivator" bundleSymbolicName="com.packtpub.felix.bookshelf-inventory-impl-moc" bundleVersion="1.5.0" ignoreFilePattern="" useProjectDefaultManifestFileLocation="true" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
+      <configuration manifestGenerationMode="OsmorcControlled" manifestLocation="" jarfileLocation="com.packtpub.felix.bookshelf-inventory-impl-moc-1.9.0.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="com.packtpub.felix.bookshelf.inventory.impl.mock.activator.BookInventoryMonkImplActivator" bundleSymbolicName="com.packtpub.felix.bookshelf-inventory-impl-moc" bundleVersion="1.9.0" ignoreFilePattern="" useProjectDefaultManifestFileLocation="true" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
         <additionalProperties>
           <property key="Bundle-Description" value="Memory-based mock implementation of the Bookshelf Inventory API" />
           <property key="Bundle-Category" value="sample" />
           <property key="Export-Package" value="com.packtpub.felix.bookshelf.inventory.impl.mock" />
-          <property key="Private-Package" value="com.packtpub.felix.bookshelf.inventory.impl.mock.activator" />
           <property key="Bundle-Name" value="Bookshelf Inventory Impl - Mock" />
         </additionalProperties>
         <additionalJARContents />
