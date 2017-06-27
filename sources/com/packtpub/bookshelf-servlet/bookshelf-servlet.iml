@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="osgiBundleFacetType" name="OSGi Bundle">
+      <configuration>
+        <properties />
+      </configuration>
+    </facet>
+    <facet type="Osmorc" name="OSGi">
+      <configuration manifestGenerationMode="OsmorcControlled" manifestLocation="" jarfileLocation="com.packtpub.felix.bookshelf-servlet-1.11.0.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="" bundleSymbolicName="com.packtpub.felix.bookshelf-servlet" bundleVersion="1.11.0" ignoreFilePattern="" useProjectDefaultManifestFileLocation="true" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
+        <additionalProperties>
+          <property key="Bundle-Category" value="sample" />
+          <property key="Export-Package" value="com.packtpub.felix.bookshelf.servlet" />
+          <property key="Bundle-Name" value="Bookshelf Servlet" />
+          <property key="Include-Resource" value="meta.xml=$MODULE_DIR$/src/main/resources/meta.xml" />
+        </additionalProperties>
+        <additionalJARContents />
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
+    <orderEntry type="library" name="Maven: org.osgi:org.osgi.core:6.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.felix:org.apache.felix.ipojo:1.12.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.felix:org.apache.felix.ipojo.metadata:1.6.0" level="project" />
+    <orderEntry type="library" name="Maven: org.ow2.asm:asm-all:5.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.felix:org.apache.felix.ipojo.annotations:1.12.1" level="project" />
+    <orderEntry type="library" name="Maven: com.packtpub.felix:com.packtpub.felix.bookshelf-service:1.10.9" level="project" />
+    <orderEntry type="library" name="Maven: com.packtpub.felix:com.packtpub.felix.bookshelf-inventory-api:1.5.1" level="project" />
+    <orderEntry type="library" name="Maven: com.packtpub.felix:com.packtpub.felix.bookshelf-log-api:1.10.8" level="project" />
+  </component>
+</module>

@@ -5,18 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.packtpub.felix</groupId>
-    <artifactId>com.packtpub.felix.bookshelf-service</artifactId>
-    <version>1.10.9</version>
-
+    <artifactId>com.packtpub.felix.bookshelf-log-impl</artifactId>
+    <version>1.10.8</version>
     <packaging>bundle</packaging>
-    <name>Bookshelf Service</name>
+    <name>Bookshelf Log Impl</name>
 
     <dependencies>
-        <dependency>
-            <groupId>com.packtpub.felix</groupId>
-            <artifactId>com.packtpub.felix.bookshelf-inventory-api</artifactId>
-            <version>1.5.1</version>
-        </dependency>
         <dependency>
             <groupId>com.packtpub.felix</groupId>
             <artifactId>com.packtpub.felix.bookshelf-log-api</artifactId>
@@ -24,8 +18,9 @@
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.core</artifactId>
-            <version>6.0.0</version>
+            <artifactId>org.osgi.compendium</artifactId>
+            <version>5.0.0</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -40,9 +35,7 @@
                     <instructions>
                         <Bundle-Category>sample</Bundle-Category>
                         <Bundle-SymbolicName>${artifactId}</Bundle-SymbolicName>
-                        <!--<Bundle-Activator>com.packtpub.felix.bookshelf.service.impl.BookshelfServiceImplActivator</Bundle-Activator>-->
-                        <Export-Package>com.packtpub.felix.bookshelf.service.api, com.packtpub.felix.bookshelf.service.exceptions</Export-Package>
-                        <!--<Private-Package>com.packtpub.felix.bookshelf.service.impl</Private-Package>-->
+                        <Export-Package>com.packtpub.felix.bookshelf.log.impl</Export-Package>
                     </instructions>
                     <remoteOBR>repo-rel</remoteOBR>
                     <prefixUrl>file:///D:/Java_test_projects/felixbook/releases</prefixUrl>

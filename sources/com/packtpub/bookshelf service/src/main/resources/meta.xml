@@ -7,6 +7,7 @@
                 name="BookShelfServiceImpl">
         <provides/>
         <requires field="inventory"/>
+        <requires field="logger"/>
     </component>
 
     <instance component="BookShelfServiceImpl" name="bookshelf.service.impl"/>

@@ -6,10 +6,7 @@ import com.packtpub.felix.bookshelf.inventory.api.exceptions.InvalidBookExceptio
 import com.packtpub.felix.bookshelf.inventory.api.model.Book;
 import com.packtpub.felix.bookshelf.service.api.BookShelfService;
 import com.packtpub.felix.bookshelf.service.exceptions.InvalidCredentialException;
-import org.apache.felix.ipojo.annotations.Component;
-import org.apache.felix.ipojo.annotations.Property;
-import org.apache.felix.ipojo.annotations.Provides;
-import org.apache.felix.ipojo.annotations.Requires;
+import org.apache.felix.ipojo.annotations.*;
 import org.apache.felix.service.command.Descriptor;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;

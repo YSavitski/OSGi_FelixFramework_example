@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1498349687356
+Build-Jdk: 1.8.0_131
+Built-By: 07ers
+Bundle-Category: sample
+Bundle-ManifestVersion: 2
+Bundle-Name: Bookshelf Servlet
+Bundle-SymbolicName: com.packtpub.felix.bookshelf-servlet
+Bundle-Version: 1.11.0
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.packtpub.felix.bookshelf.servlet;uses:="javax.servle
+ t,javax.servlet.http";version="1.11.0"
+Import-Package: com.packtpub.felix.bookshelf.inventory.api.exceptions;ve
+ rsion="[1.5,2)",com.packtpub.felix.bookshelf.inventory.api.model;versio
+ n="[1.5,2)",com.packtpub.felix.bookshelf.log.api;version="[1.10,2)",com
+ .packtpub.felix.bookshelf.service.api;version="[1.10,2)",com.packtpub.f
+ elix.bookshelf.service.exceptions;version="[1.10,2)",javax.servlet,java
+ x.servlet.http
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-3.3.0.201609221906

@@ -5,13 +5,43 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.packtpub.felix</groupId>
-    <artifactId>com.packtpub.felix.bookshelf-service</artifactId>
-    <version>1.10.9</version>
-
+    <artifactId>com.packtpub.felix.bookshelf-servlet</artifactId>
+    <version>1.11.0</version>
     <packaging>bundle</packaging>
-    <name>Bookshelf Service</name>
+    <name>Bookshelf Servlet</name>
 
     <dependencies>
+        <!--<dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.core</artifactId>
+            <version>6.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.ipojo</artifactId>
+            <version>1.12.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.ipojo.annotations</artifactId>
+            <version>1.12.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.packtpub.felix</groupId>
+            <artifactId>com.packtpub.felix.bookshelf-service</artifactId>
+            <version>1.10.9</version>
+        </dependency>
         <dependency>
             <groupId>com.packtpub.felix</groupId>
             <artifactId>com.packtpub.felix.bookshelf-inventory-api</artifactId>
@@ -22,12 +52,8 @@
             <artifactId>com.packtpub.felix.bookshelf-log-api</artifactId>
             <version>1.10.8</version>
         </dependency>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.core</artifactId>
-            <version>6.0.0</version>
-        </dependency>
     </dependencies>
+
 
     <build>
         <plugins>
@@ -40,22 +66,10 @@
                     <instructions>
                         <Bundle-Category>sample</Bundle-Category>
                         <Bundle-SymbolicName>${artifactId}</Bundle-SymbolicName>
-                        <!--<Bundle-Activator>com.packtpub.felix.bookshelf.service.impl.BookshelfServiceImplActivator</Bundle-Activator>-->
-                        <Export-Package>com.packtpub.felix.bookshelf.service.api, com.packtpub.felix.bookshelf.service.exceptions</Export-Package>
-                        <!--<Private-Package>com.packtpub.felix.bookshelf.service.impl</Private-Package>-->
+                        <Export-Package>com.packtpub.felix.bookshelf.servlet</Export-Package>
                     </instructions>
                     <remoteOBR>repo-rel</remoteOBR>
                     <prefixUrl>file:///D:/Java_test_projects/felixbook/releases</prefixUrl>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.1</version>
-                <inherited>true</inherited>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -73,9 +87,18 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <inherited>true</inherited>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
-
 
     <distributionManagement>
         <repository>
@@ -83,5 +106,6 @@
             <url>file:///D:/Java_test_projects/felixbook/releases</url>
         </repository>
     </distributionManagement>
+
 
 </project>

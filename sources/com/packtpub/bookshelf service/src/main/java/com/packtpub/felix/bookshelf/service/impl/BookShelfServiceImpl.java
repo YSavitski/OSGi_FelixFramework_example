@@ -6,17 +6,12 @@ import com.packtpub.felix.bookshelf.inventory.api.exceptions.InvalidBookExceptio
 import com.packtpub.felix.bookshelf.inventory.api.model.Book;
 import com.packtpub.felix.bookshelf.inventory.api.model.BookInventory;
 import com.packtpub.felix.bookshelf.inventory.api.model.MutableBook;
+import com.packtpub.felix.bookshelf.log.api.BookshelfLogHelper;
 import com.packtpub.felix.bookshelf.service.api.BookShelfService;
-import com.packtpub.felix.bookshelf.service.exceptions.BookInventoryNotRegisteredRuntimeException;
 import com.packtpub.felix.bookshelf.service.exceptions.InvalidCredentialException;
 import com.packtpub.felix.bookshelf.service.exceptions.SessionNotValidRuntimeException;
-/*
-import org.osgi.framework.BundleContext;
-import org.osgi.framework.ServiceReference;
-*/
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 
 public class BookShelfServiceImpl implements BookShelfService {
@@ -24,6 +19,12 @@ public class BookShelfServiceImpl implements BookShelfService {
     private String session;
     //private BundleContext context;
     private BookInventory inventory;
+
+    private BookshelfLogHelper logger;
+
+    public BookshelfLogHelper getLogger() {
+        return logger;
+    }
 
     public BookShelfServiceImpl() {
     }
@@ -33,8 +34,10 @@ public class BookShelfServiceImpl implements BookShelfService {
     }*/
 
     public String login(String username, char[] password) throws InvalidCredentialException {
+        getLogger().debug(LoggerConstants.LOG_LOGIN_ATTEMPT, username);
         if("admin".equals(username) && Arrays.equals(password, "admin".toCharArray())){
             this.session = Long.toString(System.currentTimeMillis());
+            getLogger().debug(LoggerConstants.LOG_LOGIN_SUCCESS, username, session);
             return this.session;
         } else {
             throw new InvalidCredentialException(username);
@@ -42,6 +45,7 @@ public class BookShelfServiceImpl implements BookShelfService {
     }
 
     public void logout(String sessionId) {
+        getLogger().debug(LoggerConstants.LOG_LOGOUT_SESSION, sessionId);
         checkSession(sessionId);
         this.session = null;
     }
@@ -51,6 +55,7 @@ public class BookShelfServiceImpl implements BookShelfService {
     }
 
     public Set<String> getCategories(String sessionId) {
+        getLogger().debug(LoggerConstants.LOG_GET_CATEGORIES, sessionId);
         checkSession(sessionId);
         BookInventory inventory = lookupBookInventory();
         return inventory.getCategories();
@@ -60,22 +65,28 @@ public class BookShelfServiceImpl implements BookShelfService {
     public int getBooksCount(String session) {
         checkSession(session);
         BookInventory inventory = lookupBookInventory();
+        getLogger().debug(LoggerConstants.LOG_GET_BOOKS_COUNT, session);
         return inventory.getBooksCount();
     }
 
     public void addBook(String session, String isbn, String title, String author, String category, int rating) throws BookAlreadyExistsException, InvalidBookException {
+        getLogger().debug(LoggerConstants.LOG_ADD_BOOK, isbn, title, author, category, rating);
         checkSession(session);
         BookInventory inventory = lookupBookInventory();
 
+        getLogger().debug(LoggerConstants.LOG_CREATE_BOOK, isbn);
         MutableBook book = inventory.createBook(isbn);
         book.setTitle(title);
         book.setAuthor(author);
         book.setCategory(category);
         book.setRating(rating);
+
+        getLogger().debug(LoggerConstants.LOG_STORE_BOOK,isbn);
         inventory.storeBook(book);
     }
 
     public void modifyBookCategory(String session, String isbn, String category) throws BookNotFoundException, InvalidBookException {
+        getLogger().debug(LoggerConstants.LOG_MODIFY_CATEGORY, isbn, category);
         checkSession(session);
         BookInventory inventory = lookupBookInventory();
 
@@ -85,6 +96,7 @@ public class BookShelfServiceImpl implements BookShelfService {
     }
 
     public void modifyBookRating(String session, String isbn, int rating) throws BookNotFoundException, InvalidBookException {
+        getLogger().debug(LoggerConstants.LOG_MODIFY_RATING, isbn, rating);
         checkSession(session);
         BookInventory inventory = lookupBookInventory();
 
@@ -94,25 +106,29 @@ public class BookShelfServiceImpl implements BookShelfService {
     }
 
     public void removeBook(String session, String isbn) throws BookNotFoundException {
+        getLogger().debug(LoggerConstants.LOG_REMOVE_BOOK, isbn);
         checkSession(session);
         BookInventory inventory = lookupBookInventory();
         inventory.removeBook(isbn);
     }
 
     public Book getBook(String session, String isbn) throws BookNotFoundException {
+        getLogger().debug(LoggerConstants.LOG_GET_BY_ISBN, isbn);
         checkSession(session);
         BookInventory inventory = lookupBookInventory();
         return inventory.loadBook(isbn);
     }
 
     public MutableBook getBookForEdit(String session, String isbn) throws BookNotFoundException {
+        getLogger().debug(LoggerConstants.LOG_EDIT_BY_ISBN, isbn);
         checkSession(session);
-        BookInventory inventory = lookupBookInventory();
-        return inventory.loadBookForEdit(isbn);
-
+        MutableBook book = this.inventory.loadBookForEdit(isbn);
+        getLogger().debug("Got book for edit: " + book);
+        return book;
     }
 
     public Set<String> searchBooksByCategory(String session, String categoryLike) {
+        getLogger().debug(LoggerConstants.LOG_SEARCH_BY_CATEGORY, categoryLike);
         checkSession(session);
         BookInventory inventory = lookupBookInventory();
         Map<BookInventory.SearchCriteria, String> criteria = new HashMap<>();
@@ -121,6 +137,7 @@ public class BookShelfServiceImpl implements BookShelfService {
     }
 
     public Set<String> searchBooksByAuthor(String session, String authorLike) {
+        getLogger().debug(LoggerConstants.LOG_SEARCH_BY_AUTHOR, authorLike);
         checkSession(session);
         BookInventory inventory = lookupBookInventory();
         Map<BookInventory.SearchCriteria, String> criteria = new HashMap<>();
@@ -129,6 +146,7 @@ public class BookShelfServiceImpl implements BookShelfService {
     }
 
     public Set<String> searchBooksByTitle(String session, String titleLike) {
+        getLogger().debug(LoggerConstants.LOG_SEARCH_BY_TITLE, titleLike);
         checkSession(session);
         BookInventory inventory = lookupBookInventory();
         Map<BookInventory.SearchCriteria, String> criteria = new HashMap<>();
@@ -137,6 +155,7 @@ public class BookShelfServiceImpl implements BookShelfService {
     }
 
     public Set<String> searchBooksByRating(String session, int ratingLower, int ratingUpper) {
+        getLogger().debug(LoggerConstants.LOG_SEARCH_BY_RATING, ratingLower, ratingUpper);
         checkSession(session);
         BookInventory inventory = lookupBookInventory();
         Map<BookInventory.SearchCriteria, String> criteria = new HashMap<>();
