@@ -7,7 +7,7 @@
       </configuration>
     </facet>
     <facet type="Osmorc" name="OSGi">
-      <configuration manifestGenerationMode="OsmorcControlled" manifestLocation="" jarfileLocation="com.packtpub.felix.bookshelf-inventory-api-1.5.0.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="" bundleSymbolicName="com.packtpub.felix.bookshelf-inventory-api" bundleVersion="1.5.0" ignoreFilePattern="" useProjectDefaultManifestFileLocation="true" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
+      <configuration manifestGenerationMode="OsmorcControlled" manifestLocation="" jarfileLocation="com.packtpub.felix.bookshelf-inventory-api-1.5.1.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="" bundleSymbolicName="com.packtpub.felix.bookshelf-inventory-api" bundleVersion="1.5.1" ignoreFilePattern="" useProjectDefaultManifestFileLocation="true" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
         <additionalProperties>
           <property key="Bundle-Description" value="Defines the API for the Bookshelf inventory" />
           <property key="Bundle-Category" value="sample" />

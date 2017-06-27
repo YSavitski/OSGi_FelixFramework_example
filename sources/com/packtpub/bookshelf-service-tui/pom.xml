@@ -28,6 +28,11 @@
         </dependency>
         <dependency>
             <groupId>com.packtpub.felix</groupId>
+            <artifactId>com.packtpub.felix.bookshelf-inventory-api</artifactId>
+            <version>1.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.packtpub.felix</groupId>
             <artifactId>com.packtpub.felix.bookshelf-service</artifactId>
             <version>1.10.9</version>
             <scope>compile</scope>

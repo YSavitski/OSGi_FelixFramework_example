@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.packtpub.felix</groupId>
+  <artifactId>com.packtpub.felix.bookshelf-log-impl</artifactId>
+  <versioning>
+    <release>1.10.8</release>
+    <versions>
+      <version>1.10.8</version>
+    </versions>
+    <lastUpdated>20170627092602</lastUpdated>
+  </versioning>
+</metadata>

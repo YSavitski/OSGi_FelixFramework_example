@@ -1,0 +1,11 @@
+.BookListHeader {
+	background-color: blue;	
+}
+
+.BookList {
+	width:	100%;
+}
+
+.BookListEntry {
+	background-color: light grey;	
+}

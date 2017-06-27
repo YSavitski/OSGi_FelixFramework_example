@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1498349687356
-Build-Jdk: 1.8.0_131
-Built-By: 07ers
+Bnd-LastModified: 1498555869585
+Build-Jdk: 1.8.0_112
+Built-By: savitski.yauheni
 Bundle-Category: sample
 Bundle-ManifestVersion: 2
 Bundle-Name: Bookshelf Servlet
